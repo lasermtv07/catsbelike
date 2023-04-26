@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cats be like</title>
+    <style>
+       #b {
+            background-color: darkslategrey;
+            background:url("https://images.wallpaperscraft.com/image/single/cat_winter_fluffy_99366_1920x1080.jpg");
+            /*https://cdn.wallpapersafari.com/64/8/6qVoPQ.jpg
+            http://m.gettywallpapers.com/wp-content/uploads/2021/08/Cat-HD-Wallpaper.jpg
+            https://wallpapercave.com/wp/wp2177611.jpg
+            https://images.wallpaperscraft.com/image/single/cat_cute_ball_127642_1920x1080.jpg
+            https://images.wallpaperscraft.com/image/single/cat_winter_fluffy_99366_1920x1080.jpg
+            */
+            background-position: 50% 0;
+        }
+        .wrap {
+            position: absolute;
+            top:50%; left:50%;
+            transform: translate(-50%, -50%);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color:white;
+            background-color:rgba(0,0,0,0.5);
+            padding: 20px;
+            border: 1px solid white;
+        }
+        a {
+            color:white;
+            text-decoration: none;
+        }
+        .wrap button {
+            padding: 6px;
+            margin: 10px 0 0 0;
+            border: 2px solid black;
+            background-color: white;
+            border-radius: 15%;
+        }
+    </style>
+</head>
+<body id=b>
+    <a href="https://catfact.ninja">made using catfact.ninja</a> | <a href="images.txt">backgrounds</a>
+    <div class="wrap">
+    <h1>cats be like..</h1>
+    <span id="fact">pending..</span><br>
+    <button onmousedown="window.location.reload()">Regenerate</button>
+    </div>
+    <script>
+        const dom=document.getElementById("fact");
+        const bkg=document.getElementById("b");
+        const cats=["https://images.wallpaperscraft.com/image/single/cat_winter_fluffy_99366_1920x1080.jpg", "https://cdn.wallpapersafari.com/64/8/6qVoPQ.jpg", "http://m.gettywallpapers.com/wp-content/uploads/2021/08/Cat-HD-Wallpaper.jpg", "https://images.wallpaperscraft.com/image/single/cat_cute_ball_127642_1920x1080.jpg","https://images.wallpaperscraft.com/image/single/cat_winter_fluffy_99366_1920x1080.jpg"]
+        ft=fetch("https://catfact.ninja/fact").then((x) => x.json()).then((i) => dom.innerHTML=i.fact);
+        b.style.background="url('"+cats[Math.floor(Math.random(5)*5)]+"')"
+        console.log("url('"+cats[Math.floor(Math.random(4))]+"')")
+        console.log(Math.floor(Math.random(5)*10))
+        
+
+    </script>
+</body>
+</html>
